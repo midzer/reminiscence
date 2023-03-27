@@ -2,11 +2,12 @@
 SDL_CFLAGS   := `sdl2-config --cflags`
 SDL_LIBS     := `sdl2-config --libs`
 
-MODPLUG_LIBS := -lmodplug
+MODPLUG_LIBS := #-lmodplug
 TREMOR_LIBS  := #-lvorbisidec -logg
 ZLIB_LIBS    := -lz
 
-CXXFLAGS += -Wall -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
+CXXFLAGS += -O3 -Wall -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
+LDFLAGS = -sERROR_ON_UNDEFINED_SYMBOLS=0
 
 SRCS = collision.cpp cpc_player.cpp cutscene.cpp decode_mac.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp \
 	menu.cpp mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp protection.cpp resource.cpp resource_aba.cpp \

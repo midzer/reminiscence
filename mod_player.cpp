@@ -10,7 +10,7 @@
 #include "util.h"
 
 #ifdef USE_MODPLUG
-#include <libmodplug/modplug.h>
+#include "libmodplug/modplug.h"
 
 struct ModPlayer_impl {
 

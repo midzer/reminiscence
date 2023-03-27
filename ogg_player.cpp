@@ -8,7 +8,7 @@
 #include <tremor/ivorbisfile.h>
 #endif
 #ifdef USE_STB_VORBIS
-#include "stb_vorbis.c"
+#include "stb_vorbis.h"
 #endif
 #include "file.h"
 #include "mixer.h"
